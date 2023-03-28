@@ -4,6 +4,137 @@
   box-sizing: border-box;
 }
 
+body {
+  display: grid;
+  grid-template-rows: 2rem 1fr 1rem;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+header {
+  display: grid;
+  grid-area: header;
+
+  margin-bottom: 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-area: main;
+}
+
 li {
   margin: 1rem;
+}
+
+/* #cymbal {
+  position: relative; */
+/* display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; */
+/* } */
+
+/* #drums {
+  position: relative; */
+/* display: grid;
+  grid-template-columns: 150px 150px 150px 150px 150px; */
+
+/* margin-bottom: 1rem; */
+/* justify-content: space-evenly; */
+/* } */
+
+section {
+  position: relative;
+  width: 100vw;
+  height: 92.5vh;
+}
+
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.durums {
+  /* opacity: 0; */
+  width: 15rem;
+  height: 15rem;
+  background-color: brown;
+  border-radius: 50%;
+  position: absolute;
+}
+
+#crash {
+  left: 14%;
+  width: 17rem;
+  height: 12rem;
+}
+
+#ride {
+  left: 56%;
+  width: 22rem;
+  height: 18rem;
+}
+
+#tomHigh {
+  left: 33.2%;
+  top: 15%;
+  width: 10rem;
+  height: 9.8rem;
+}
+
+#tomMid {
+  left: 45%;
+  top: 17%;
+  width: 11rem;
+  height: 11rem;
+}
+
+#tomLow {
+  left: 52.57%;
+  top: 45%;
+  width: 15rem;
+  height: 13rem;
+}
+
+#snare {
+  left: 29.2%;
+  top: 41%;
+  width: 13rem;
+  height: 12rem;
+}
+
+#hiHatOpen {
+  left: 11%;
+  top: 35%;
+  width: 14rem;
+  height: 11rem;
+}
+
+#hiHatClose {
+  left: 28%;
+  top: 68%;
+  width: 7rem;
+  height: 10rem;
+  transform: rotate(-30deg);
+}
+
+#kick {
+  left: 40%;
+  top: 55%;
+  width: 14rem;
+  height: 11rem;
+}
+
+footer {
+  grid-area: footer;
+}
+
+footer p {
+  text-align: center;
 }
