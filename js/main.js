@@ -10,9 +10,11 @@ const tomHigh = document.querySelector("#tomHigh");
 const tomLow = document.querySelector("#tomLow");
 const tomMid = document.querySelector("#tomMid");
 const recorder = document.querySelector("#recorder");
+const crash2 = document.querySelector("#crash2");
 
 const sounds = [
   crash,
+  crash2,
   hiHatClose,
   hiHatOpen,
   kick,

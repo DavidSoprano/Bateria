@@ -4,18 +4,17 @@
   box-sizing: border-box;
 }
 
-body {
-  display: grid;
+/* body {
+  /* display: grid;
   grid-template-rows: 2rem 1fr 1rem;
   grid-template-areas:
     "header"
     "main"
-    "footer";
-}
+    "footer"; */
+/* }  */
 
 header {
-  display: grid;
-  grid-area: header;
+  /* grid-area: header; */
 
   margin-bottom: 1rem;
 }
@@ -24,29 +23,9 @@ h1 {
   text-align: center;
 }
 
-main {
-  display: grid;
-  grid-area: main;
-}
-
 li {
   margin: 1rem;
 }
-
-/* #cymbal {
-  position: relative; */
-/* display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; */
-/* } */
-
-/* #drums {
-  position: relative; */
-/* display: grid;
-  grid-template-columns: 150px 150px 150px 150px 150px; */
-
-/* margin-bottom: 1rem; */
-/* justify-content: space-evenly; */
-/* } */
 
 section {
   position: relative;
@@ -70,65 +49,73 @@ img {
 }
 
 #crash {
-  left: 14%;
-  width: 17rem;
-  height: 12rem;
+  left: 13%;
+  width: 20%;
+  height: 28%;
 }
 
 #ride {
   left: 56%;
-  width: 22rem;
-  height: 18rem;
+  width: 25%;
+  height: 40%;
+}
+
+#crash2 {
+  left: 72%;
+  top: 24%;
+  width: 25%;
+  height: 38%;
 }
 
 #tomHigh {
   left: 33.2%;
   top: 15%;
-  width: 10rem;
-  height: 9.8rem;
+  width: 12%;
+  height: 22%;
 }
 
 #tomMid {
   left: 45%;
   top: 17%;
-  width: 11rem;
-  height: 11rem;
+  width: 13%;
+  height: 25%;
 }
 
 #tomLow {
-  left: 52.57%;
+  left: 52.1%;
   top: 45%;
-  width: 15rem;
-  height: 13rem;
+  width: 17%;
+  height: 29%;
 }
 
 #snare {
-  left: 29.2%;
+  left: 29%;
   top: 41%;
-  width: 13rem;
-  height: 12rem;
+  width: 14.6%;
+  height: 29%;
 }
 
 #hiHatOpen {
   left: 11%;
   top: 35%;
-  width: 14rem;
-  height: 11rem;
+  width: 16%;
+  height: 27%;
+  right: 12%;
 }
 
 #hiHatClose {
   left: 28%;
   top: 68%;
-  width: 7rem;
-  height: 10rem;
+  width: 5%;
+  height: 23%;
   transform: rotate(-30deg);
 }
 
 #kick {
-  left: 40%;
-  top: 55%;
-  width: 14rem;
-  height: 11rem;
+  left: 43%;
+  top: 57%;
+  width: 6%;
+  height: 24%;
 }
 
 footer {
