@@ -9,8 +9,11 @@ const snare = document.querySelector("#snare");
 const tomHigh = document.querySelector("#tomHigh");
 const tomLow = document.querySelector("#tomLow");
 const tomMid = document.querySelector("#tomMid");
-const recorder = document.querySelector("#recorder");
 const crash2 = document.querySelector("#crash2");
+// Botón de grabar
+const recorderBtn = document.querySelector("#recorder");
+const stopBtn = document.querySelector("#stop");
+const playBtn = document.querySelector("#play");
 
 const sounds = [
   crash,
@@ -24,6 +27,8 @@ const sounds = [
   tomLow,
   tomMid,
 ];
+
+// const recordedMusic = {};
 
 const soundPlay = (click) => {
   const idKey = click.target.id;
@@ -64,9 +69,25 @@ const soundPlayKey = (event) => {
       tomMid.click();
       break;
     default:
-      alert("Tecla no válida");
+      console.log("Tecla no válida");
       break;
   }
 };
 
 document.addEventListener("keydown", soundPlayKey);
+
+const audioElementPlay = new Audio("sounds/snare.wav");
+
+snare.soundPlay.addEventListener("click", (event) => {
+  audioElementPlay.play();
+});
+
+// document.addEventListener("click", function (e) {
+//   const cursor = document.querySelector(".durums");
+//   cursor.classList.add("cursor-click");
+
+//   // Después de un breve período, elimine la clase 'cursor-click'
+//   setTimeout(function () {
+//     cursor.classList.remove("cursor-click");
+//   }, 2000);
+// });

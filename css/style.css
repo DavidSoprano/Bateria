@@ -27,26 +27,103 @@ li {
   margin: 1rem;
 }
 
-section {
+.drumSets {
   position: relative;
   width: 100vw;
   height: 92.5vh;
 }
 
-img {
+.backgroundImage {
   position: absolute;
   width: 100%;
   height: 100%;
+  cursor: wait;
 }
 
+/* Iconos de arriba */
+.playBtns {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Botones de arriba */
+.iconBtns {
+  background-color: transparent;
+  padding: 1px 1.5px 1px 1.5px;
+  border-radius: 25%;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* #recorder {
+  background-color: greenyellow;
+}
+
+#stop {
+  background-color: red;
+} */
+
 .durums {
+  /* Con OPACITY ocultamos los botones */
   /* opacity: 0; */
   width: 15rem;
   height: 15rem;
   background-color: brown;
   border-radius: 50%;
   position: absolute;
+  cursor: url("/images/baqueta.png"), auto;
+  animation: click 2s linear;
 }
+
+@keyframes baquetaMovement {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes martilloMovement {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.durums2 {
+  /* opacity: 0; */
+  cursor: url("/images/martillo.png"), auto;
+  animation: click 2s linear;
+}
+
+/* .cursor-click {
+  animation: click 2s linear;
+}
+
+@keyframes click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
 
 #crash {
   left: 13%;
