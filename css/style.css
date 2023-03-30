@@ -55,12 +55,21 @@ h1 {
 .durums {
   background-color: transparent;
   border: transparent;
+  outline: none;
   border-radius: 50%;
   position: absolute;
   cursor: url("/images/baqueta.png"), auto;
 }
 
-.durums:active {
+.active2 {
+  animation: click2 0.5s linear;
+}
+
+.active {
+  animation: click 0.5s linear;
+}
+
+.durums1:active {
   animation: click 0.5s linear;
 }
 
@@ -69,7 +78,13 @@ h1 {
 }
 
 .durums2:active {
-  animation: click 0.5s linear;
+  animation: click2 0.5s linear;
+}
+
+@keyframes click2 {
+  50% {
+    box-shadow: inset 0 0 15px 15px rgba(0, 0, 0, 0.6);
+  }
 }
 
 @keyframes click {
