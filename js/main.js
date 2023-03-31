@@ -128,3 +128,11 @@ const soundStopKey = (event) => {
 
 document.addEventListener("keydown", soundPlayKey);
 document.addEventListener("keyup", soundStopKey);
+
+// Huevo de Pascua para el TRONO
+const fartBtn = document.querySelector("#soundFart");
+const fartNoise = new Audio("sounds/fart.wav");
+
+fartBtn.addEventListener("click", (event) => {
+  fartNoise.play();
+});

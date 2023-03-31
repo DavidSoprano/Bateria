@@ -167,3 +167,19 @@ h1 {
 footer p {
   text-align: center;
 }
+
+/* Huevo de Pascua */
+.easterEgg {
+  background-color: transparent;
+  border: transparent;
+  outline: none;
+  border-radius: 50%;
+  position: absolute;
+}
+
+#soundFart {
+  left: 35%;
+  top: 85%;
+  width: 15%;
+  height: 15%;
+}
