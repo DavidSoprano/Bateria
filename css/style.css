@@ -4,18 +4,7 @@
   box-sizing: border-box;
 }
 
-/* body {
-  /* display: grid;
-  grid-template-rows: 2rem 1fr 1rem;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer"; */
-/* }  */
-
 header {
-  /* grid-area: header; */
-
   margin-bottom: 1rem;
 }
 
@@ -23,14 +12,10 @@ h1 {
   text-align: center;
 }
 
-li {
-  margin: 1rem;
-}
-
 .drumSets {
   position: relative;
   width: 100vw;
-  height: 92.5vh;
+  height: 85vh;
 }
 
 .backgroundImage {
@@ -68,62 +53,46 @@ li {
 } */
 
 .durums {
-  /* Con OPACITY ocultamos los botones */
-  opacity: 0;
-  width: 15rem;
-  height: 15rem;
-  background-color: brown;
+  background-color: transparent;
+  border: transparent;
+  outline: none;
   border-radius: 50%;
   position: absolute;
   cursor: url("/images/baqueta.png"), auto;
-  animation: click 2s linear;
 }
 
-@keyframes baquetaMovement {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.7);
-  }
-  100% {
-    transform: scale(1);
-  }
+.active2 {
+  animation: click2 0.5s linear;
 }
 
-@keyframes martilloMovement {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.7);
-  }
-  100% {
-    transform: scale(1);
-  }
+.active {
+  animation: click 0.5s linear;
+}
+
+.durums1:active {
+  animation: click 0.5s linear;
 }
 
 .durums2 {
-  opacity: 0;
   cursor: url("/images/martillo.png"), auto;
-  animation: click 2s linear;
 }
 
-/* .cursor-click {
-  animation: click 2s linear;
+.durums2:active {
+  animation: click2 0.5s linear;
+}
+
+@keyframes click2 {
+  50% {
+    box-shadow: inset 0 0 15px 15px rgba(0, 0, 0, 0.6);
+  }
 }
 
 @keyframes click {
-  0% {
-    transform: scale(1);
-  }
   50% {
-    transform: scale(2);
+    box-shadow: inset 0 0 15px 15px rgba(0, 0, 0, 0.6);
+    transform: scale(0.95);
   }
-  100% {
-    transform: scale(1);
-  }
-} */
+}
 
 #crash {
   left: 13%;
@@ -193,10 +162,6 @@ li {
   top: 57%;
   width: 6%;
   height: 24%;
-}
-
-footer {
-  grid-area: footer;
 }
 
 footer p {
