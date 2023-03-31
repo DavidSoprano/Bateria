@@ -28,7 +28,9 @@ const sounds = [
   tomMid,
 ];
 
+// ARRAY vacío para almacenar la grabación
 // const recordedMusic = {};
+// Añadir setTimeout para cada pulsación
 
 const soundPlay = (click) => {
   const idKey = click.target.id;
