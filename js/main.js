@@ -1,32 +1,11 @@
 "use strict";
 
-const crash = document.querySelector("#crash");
-const hiHatClose = document.querySelector("#hiHatClose");
-const hiHatOpen = document.querySelector("#hiHatOpen");
-const kick = document.querySelector("#kick");
-const ride = document.querySelector("#ride");
-const snare = document.querySelector("#snare");
-const tomHigh = document.querySelector("#tomHigh");
-const tomLow = document.querySelector("#tomLow");
-const tomMid = document.querySelector("#tomMid");
-const crash2 = document.querySelector("#crash2");
+const sounds = document.querySelectorAll(".durums");
+
 // Botón de grabar
 const recorderBtn = document.querySelector("#recorder");
 const stopBtn = document.querySelector("#stop");
 const playBtn = document.querySelector("#play");
-
-const sounds = [
-  crash,
-  crash2,
-  hiHatClose,
-  hiHatOpen,
-  kick,
-  ride,
-  snare,
-  tomHigh,
-  tomLow,
-  tomMid,
-];
 
 // ARRAY vacío para almacenar la grabación
 // const recordedMusic = {};
@@ -45,30 +24,43 @@ const soundPlayKey = (event) => {
   switch (event.key.toLowerCase()) {
     case "a":
       crash.click();
+      crash.classList.add("active");
       break;
     case "s":
       hiHatClose.click();
+      hiHatClose.classList.add("active2");
       break;
     case "d":
       hiHatOpen.click();
+      hiHatOpen.classList.add("active");
       break;
     case "f":
       kick.click();
+      kick.classList.add("active2");
       break;
     case "g":
       ride.click();
+      ride.classList.add("active");
       break;
-    case "h":
+    case "q":
       snare.click();
+      snare.classList.add("active");
       break;
-    case "j":
+    case "w":
       tomHigh.click();
+      tomHigh.classList.add("active");
       break;
-    case "k":
+    case "e":
       tomLow.click();
+      tomLow.classList.add("active");
       break;
-    case "l":
+    case "r":
       tomMid.click();
+      tomMid.classList.add("active");
+      break;
+    case "t":
+      crash2.click();
+      crash2.classList.add("active");
       break;
     default:
       console.log("Tecla no válida");
@@ -76,20 +68,63 @@ const soundPlayKey = (event) => {
   }
 };
 
+const soundStopKey = (event) => {
+  switch (event.key.toLowerCase()) {
+    case "a":
+      setTimeout(() => {
+        crash.classList.remove("active");
+      }, 0);
+      break;
+    case "s":
+      setTimeout(() => {
+        hiHatClose.classList.remove("active2");
+      }, 0);
+
+      break;
+    case "d":
+      setTimeout(() => {
+        hiHatOpen.classList.remove("active");
+      }, 0);
+      break;
+    case "f":
+      setTimeout(() => {
+        kick.classList.remove("active2");
+      }, 0);
+      break;
+    case "g":
+      setTimeout(() => {
+        ride.classList.remove("active");
+      }, 0);
+      break;
+    case "q":
+      setTimeout(() => {
+        snare.classList.remove("active");
+      }, 0);
+      break;
+    case "w":
+      setTimeout(() => {
+        tomHigh.classList.remove("active");
+      }, 0);
+      break;
+    case "e":
+      setTimeout(() => {
+        tomLow.classList.remove("active");
+      }, 0);
+      break;
+    case "r":
+      setTimeout(() => {
+        tomMid.classList.remove("active");
+      }, 0);
+      break;
+    case "t":
+      setTimeout(() => {
+        crash2.classList.remove("active");
+      }, 0);
+      break;
+    default:
+      break;
+  }
+};
+
 document.addEventListener("keydown", soundPlayKey);
-
-const audioElementPlay = new Audio("sounds/snare.wav");
-
-snare.soundPlay.addEventListener("click", (event) => {
-  audioElementPlay.play();
-});
-
-// document.addEventListener("click", function (e) {
-//   const cursor = document.querySelector(".durums");
-//   cursor.classList.add("cursor-click");
-
-//   // Después de un breve período, elimine la clase 'cursor-click'
-//   setTimeout(function () {
-//     cursor.classList.remove("cursor-click");
-//   }, 2000);
-// });
+document.addEventListener("keyup", soundStopKey);
