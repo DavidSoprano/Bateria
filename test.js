@@ -1,35 +1,39 @@
-// const sounds = {
-//   kickBtn: new Audio("/sounds/kick.wav"),
-//   snareBtn: new Audio("/sounds/snare.wav"),
-//   hiHatBtn: new Audio("/sounds/hiHatClose.wav"),
-// };
+"use strict";
 
-// console.log(sounds);
+// query para los distintos tipos de botones
+const drumBtns = document.querySelectorAll(".drumSet"); // Botones de sonido
+const recordBtn = document.querySelector("#recordButton"); // Botón de grabar
+// Objeto con los sonidos
+const sounds = {
+  kickBtn: new Audio("/sounds/kick.wav"), // Node cannot be found in the current page.
+  snareBtn: new Audio("/sounds/snare.wav"), // Node cannot be found in the current page.
+  hiHatBtn: new Audio("/sounds/hiHatClose.wav"), // Node cannot be found in the current page.
+}; // WAV está en currentSrc (por el aviso de arriba)
 
-const drumBtns = document.querySelectorAll(".drumSet");
+console.log(sounds); // {kickBtn: audio, snareBtn: audio, hiHatBtn: audio}
+console.log(sounds.kickBtn); // <audio preload="auto" src="/sounds/kick.wav"></audio>
+console.log(sounds.snareBtn); // <audio preload="auto" src="/sounds/snare.wav"></audio>
+console.log(sounds.hiHatBtn); // <audio preload="auto" src="/sounds/hiHatClose.wav"></audio>
 
-const soundPlay = (click) => {
-  const idKey = click.target.id;
-  new Audio("../sounds/" + idKey + ".wav").play();
-};
+// Recorre los sonidos - OJO!! Aquí lo hace como si fuese un ARRAY, pero no lo es
+// drumBtns.forEach((drumBtn) => {
+//   const soundName = drumBtn.dataset.sound;
+//   drumBtn.addEventListener("click", () => {
+//     playSound(sounds[soundName]);
+//   });
+// });
 
-for (const drumBtn of drumBtns) {
-  drumBtn.addEventListener("click", soundPlay);
+// En teoría sería con FOR IN para recorrer el OBJETO
+for (const drumBtn in drumBtns) {
+  const soundName = drumBtn.dataset.sound;
+  drumBtn.addEventListener("click", (event) => {
+    playSound(sounds[soundName]);
+  });
 }
 
-// Recorre los sonidos
-drumBtns.forEach((button) => {
-  const soundName = button.dataset.sound;
-
-  button.addEventListener("click", () => {
-    playSound(drumBtns[soundName]);
-  });
-});
-
-// playSound
-function playSound(sound) {
-  sound.currentTime = 0;
-  sound.play();
+function playSound(drumBtn) {
+  // sound.currentTime = 0;
+  drumBtn.play();
 }
 
 // Array vacío con la secuencia sobra la que debería grabarse
@@ -44,10 +48,22 @@ function recordSequence(soundName) {
   console.log(sequence);
 }
 
-recordSequence();
+// recordSequence();
 
+// const closeHiHatButton = document.querySelector(".closeHiHatBtn");
+// const audioElementCloseHiHat = new Audio("sounds/hihat-close.wav");
 // closeHiHatButton.addEventListener("click", (event) => {
 //     console.log(event);
 //     audioElementCloseHiHat.play();
 //     console.log("Click en Hi-hat CLOSE");
 //   });
+
+recordBtn.addEventListener("click", (event) => {
+  recordSequence();
+});
+
+// Crear función con estos botones especiales
+// class buttonKeys
+// button id recordButton
+// button id stopButton
+// button id playButton

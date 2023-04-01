@@ -7,9 +7,7 @@ const recorderBtn = document.querySelector("#recorder");
 const stopBtn = document.querySelector("#stop");
 const playBtn = document.querySelector("#play");
 
-// ARRAY vacío para almacenar la grabación
 // const recordedMusic = {};
-// Añadir setTimeout para cada pulsación
 
 const soundPlay = (click) => {
   const idKey = click.target.id;
@@ -129,29 +127,39 @@ const soundStopKey = (event) => {
 document.addEventListener("keydown", soundPlayKey);
 document.addEventListener("keyup", soundStopKey);
 
-// Huevo de Pascua para el TRONO
-const fartBtn = document.querySelector("#soundFart");
-const fartNoise = new Audio("sounds/fart.wav");
+// Segundo ejemplo con IA
 
-fartBtn.addEventListener("click", (event) => {
-  fartNoise.play();
+let mediaRecorder;
+
+recorderBtn.addEventListener("click", () => {
+  // Crear un nuevo objeto MediaRecorder y especificar el formato de archivo y la tasa de bits
+  mediaRecorder = new MediaRecorder(new Blob(), {
+    type: "audio/wav",
+    audioBitsPerSecond: 128000,
+  });
+
+  // Comenzar la grabación
+  mediaRecorder.start();
 });
 
-// TESTEO CON GRABAR
+stopBtn.addEventListener("click", () => {
+  // Detener la grabación
+  mediaRecorder.stop();
 
-// const recordBtn = document.querySelector("#recordIcon");
-// recordBtn.addEventListener("click", (event) => {
-//   recordSequence();
-// });
+  // Descargar el archivo grabado
+  const blob = new Blob(recordedChunks, { type: "audio/wav" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "grabacion.wav";
+  a.click();
 
-// const sequence = [];
+  // Limpiar los fragmentos grabados
+  recordedChunks = [];
+});
 
-// function recordSequence(soundName) {
-//   const time = Date.now();
+let recordedChunks = [];
 
-//   sequence.push({ sound: sounds.soundPlay, time: time });
-//   console.log(soundName);
-//   console.log(kick);
-//   console.log(time);
-//   console.log(sequence);
-// }
+mediaRecorder.addEventListener("dataavailable", (e) => {
+  recordedChunks.push(e.data);
+});
