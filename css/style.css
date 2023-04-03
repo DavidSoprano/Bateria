@@ -44,14 +44,6 @@ h1 {
   gap: 1rem;
 }
 
-/* #recorder {
-  background-color: greenyellow;
-}
-
-#stop {
-  background-color: red;
-} */
-
 .durums {
   background-color: transparent;
   border: transparent;
@@ -59,6 +51,22 @@ h1 {
   border-radius: 50%;
   position: absolute;
   cursor: url("/images/baqueta.png"), auto;
+}
+
+/* Estilando acceso de teclas y rotándolas */
+.keyAccessHint {
+  position: absolute;
+  color: white;
+  left: 4%;
+  bottom: 7%;
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(-90deg);
+}
+
+ul {
+  list-style-type: none;
+  font-size: large;
+  font-weight: bold;
 }
 
 .active2 {
