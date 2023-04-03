@@ -201,3 +201,33 @@ footer p {
   text-align: center;
   color: rgb(188, 188, 188);
 }
+
+/* Estilando acceso de teclas y rotándolas */
+.keyAccessHint {
+  position: absolute;
+  color: white;
+  left: 4%;
+  bottom: 7%;
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(-90deg);
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Huevo de Pascua */
+.easterEgg {
+  background-color: transparent;
+  border: transparent;
+  outline: none;
+  border-radius: 50%;
+  position: absolute;
+}
+
+#soundFart {
+  left: 35%;
+  top: 85%;
+  width: 15%;
+  height: 15%;
+}
