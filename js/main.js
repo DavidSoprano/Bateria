@@ -136,22 +136,3 @@ const fartNoise = new Audio("sounds/fart.wav");
 fartBtn.addEventListener("click", (event) => {
   fartNoise.play();
 });
-
-// TESTEO CON GRABAR
-
-// const recordBtn = document.querySelector("#recordIcon");
-// recordBtn.addEventListener("click", (event) => {
-//   recordSequence();
-// });
-
-// const sequence = [];
-
-// function recordSequence(soundName) {
-//   const time = Date.now();
-
-//   sequence.push({ sound: sounds.soundPlay, time: time });
-//   console.log(soundName);
-//   console.log(kick);
-//   console.log(time);
-//   console.log(sequence);
-// }
