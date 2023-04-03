@@ -18,6 +18,96 @@ for (const sound of sounds) {
   sound.addEventListener("click", soundPlay);
 }
 
+const grabaciones = [];
+let grabacionActiva = false;
+let tiempoAnterior = null;
+
+const grabacionesSelect = document.querySelector("#grabacionesSelect");
+
+// Agrega las opciones de grabación al elemento "select"
+for (let i = 0; i < localStorage.length; i++) {
+  const clave = localStorage.key(i);
+  if (clave.includes("-")) {
+    const opcion = document.createElement("option");
+    opcion.text = clave;
+    opcion.value = clave;
+    grabacionesSelect.add(opcion);
+  }
+}
+
+function leerGrabacion(claveGrabacion) {
+  const grabacionSerializada = localStorage.getItem(claveGrabacion);
+  const grabacion = JSON.parse(grabacionSerializada);
+  grabaciones.length = 0; // Vaciar el array actual
+  grabaciones.push(...grabacion); // Agregar los nuevos datos
+}
+
+// Agrega un nuevo evento para cargar las grabaciones seleccionadas del Local Storage
+grabacionesSelect.addEventListener("change", () => {
+  const claveGrabacion = grabacionesSelect.value;
+  grabaciones.length = 0;
+  leerGrabacion(claveGrabacion);
+});
+
+const formulario = document.querySelector("form");
+
+formulario.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const nombreGrabacion = document.querySelector("#nombreGrabacion").value;
+  const etiquetaGrabacion = document.querySelector("#etiquetaGrabacion").value;
+  const claveGrabacion = `${nombreGrabacion}-${etiquetaGrabacion}`;
+  const grabacionSerializada = JSON.stringify(grabaciones);
+  localStorage.setItem(claveGrabacion, grabacionSerializada);
+  alert(
+    `La grabación "${nombreGrabacion}" ha sido guardada con la etiqueta "${etiquetaGrabacion}".`
+  );
+
+  grabaciones.length = 0;
+  tiempoAnterior = null;
+});
+
+sounds.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    if (grabacionActiva) {
+      const tiempoActual = Date.now();
+      const soundName = boton.dataset.soundName;
+      const tiempoTranscurrido = tiempoAnterior
+        ? tiempoActual - tiempoAnterior
+        : null;
+      const grabacion = {
+        name: soundName,
+        time: tiempoActual,
+        elapsedTime: tiempoTranscurrido,
+      };
+      grabaciones.push(grabacion);
+      tiempoAnterior = tiempoActual;
+    }
+  });
+});
+
+recorderBtn.addEventListener("click", () => {
+  grabacionActiva = true;
+  tiempoAnterior = null;
+});
+
+stopBtn.addEventListener("click", () => {
+  grabacionActiva = false;
+});
+
+playBtn.addEventListener("click", () => {
+  let tiempoTranscurridoTotal = 0;
+  grabaciones.forEach((grabacion) => {
+    const tiempoTranscurrido = grabacion.elapsedTime || 0;
+    setTimeout(() => {
+      console.log(
+        `Botón: ${grabacion.name}, Tiempo: ${grabacion.time}, Tiempo transcurrido: ${tiempoTranscurridoTotal}`
+      );
+      new Audio("../sounds/" + grabacion.name + ".wav").play();
+    }, tiempoTranscurridoTotal);
+    tiempoTranscurridoTotal += tiempoTranscurrido;
+  });
+});
+
 const soundPlayKey = (event) => {
   switch (event.key.toLowerCase()) {
     case "a":

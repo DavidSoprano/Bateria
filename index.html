@@ -13,6 +13,15 @@
     </header>
 
     <main>
+      <form>
+        <label for="nombreGrabacion">Nombre de la grabación:</label>
+        <input id="nombreGrabacion" name="nombreGrabacion" /><br />
+        <label for="etiquetaGrabacion">Etiqueta de la grabación:</label>
+        <input id="etiquetaGrabacion" name="etiquetaGrabacion" /><br />
+        <button type="submit" id="guardarGrabacion">Guardar grabación</button>
+        <select name="seleccionarGrabacion" id="grabacionesSelect"></select>
+      </form>
+
       <section class="controls">
         <button id="recorder" class="iconBtns">
           <img
@@ -46,16 +55,56 @@
           src="images/IMAGENTOCHA.jpeg"
           alt="bateria"
         />
-        <button id="crash" class="durums durums1"></button>
-        <button id="crash2" class="durums durums1"></button>
-        <button id="ride" class="durums durums1"></button>
-        <button id="tomHigh" class="durums durums1"></button>
-        <button id="tomMid" class="durums durums1"></button>
-        <button id="tomLow" class="durums durums1"></button>
-        <button id="snare" class="durums durums1"></button>
-        <button id="hiHatOpen" class="durums durums1"></button>
-        <button id="hiHatClose" class="durums durums2"></button>
-        <button id="kick" class="durums durums2"></button>
+        <button
+          data-sound-name="crash"
+          id="crash"
+          class="durums durums1"
+        ></button>
+        <button
+          data-sound-name="crash2"
+          id="crash2"
+          class="durums durums1"
+        ></button>
+        <button
+          data-sound-name="ride"
+          id="ride"
+          class="durums durums1"
+        ></button>
+        <button
+          data-sound-name="tomHigh"
+          id="tomHigh"
+          class="durums durums1"
+        ></button>
+        <button
+          data-sound-name="tomMid"
+          id="tomMid"
+          class="durums durums1"
+        ></button>
+        <button
+          data-sound-name="tomLow"
+          id="tomLow"
+          class="durums durums1"
+        ></button>
+        <button
+          data-sound-name="snare"
+          id="snare"
+          class="durums durums1"
+        ></button>
+        <button
+          data-sound-name="hiHatOpen"
+          id="hiHatOpen"
+          class="durums durums1"
+        ></button>
+        <button
+          data-sound-name="hiHatClose"
+          id="hiHatClose"
+          class="durums durums2"
+        ></button>
+        <button
+          data-sound-name="kick"
+          id="kick"
+          class="durums durums2"
+        ></button>
       </section>
     </main>
 

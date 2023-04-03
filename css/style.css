@@ -71,6 +71,7 @@ h1 {
 
 .durums1:active {
   animation: click 0.5s linear;
+  cursor: url("/images/baquetaRotate.png"), auto;
 }
 
 .durums2 {
@@ -79,6 +80,7 @@ h1 {
 
 .durums2:active {
   animation: click2 0.5s linear;
+  cursor: url("/images/martilloRotate.png"), auto;
 }
 
 @keyframes click2 {
