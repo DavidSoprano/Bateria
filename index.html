@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Durums</title>
+    <title>BATERIA VIRTUAL</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -13,41 +13,34 @@
     </header>
 
     <main>
-      <form>
-        <label for="nombreGrabacion">Nombre de la grabación:</label>
-        <input id="nombreGrabacion" name="nombreGrabacion" /><br />
-        <label for="etiquetaGrabacion">Etiqueta de la grabación:</label>
-        <input id="etiquetaGrabacion" name="etiquetaGrabacion" /><br />
-        <button type="submit" id="guardarGrabacion">Guardar grabación</button>
-        <select name="seleccionarGrabacion" id="grabacionesSelect"></select>
-      </form>
-
-      <section class="controls">
-        <button id="recorder" class="iconBtns">
-          <img
-            id="playIcon"
-            class="playBtns"
-            src="/images/recorder.png"
-            alt="Botón de grabar"
-          />
-        </button>
-        <button id="stop" class="iconBtns">
-          <img
-            id="stopIcon"
-            class="playBtns"
-            src="/images/stop2.png"
-            alt="Botón de parar"
-          />
-        </button>
-        <button id="play" class="iconBtns">
-          <img
-            id="recordIcon"
-            class="playBtns"
-            src="/images/play.png"
-            alt="Botón de play"
-          />
-        </button>
-      </section>
+      <div>
+        <section class="controls">
+          <button id="recorder" class="iconBtns">
+            <img
+              id="recorderIcon"
+              class="playBtns"
+              src="/images/recorder.png"
+              alt="Botón de grabar"
+            />
+          </button>
+          <button id="stop" class="iconBtns">
+            <img
+              id="stopIcon"
+              class="playBtns"
+              src="/images/stop2.png"
+              alt="Botón de parar"
+            />
+          </button>
+          <button id="play" class="iconBtns">
+            <img
+              id="playIcon"
+              class="playBtns"
+              src="/images/play.png"
+              alt="Botón de play"
+            />
+          </button>
+        </section>
+      </div>
 
       <section class="drumSets">
         <img
@@ -105,10 +98,24 @@
           id="kick"
           class="durums durums2"
         ></button>
+        <section class="form">
+          <form>
+            <label for="nombreGrabacion">Nombre de la grabación: </label>
+            <input id="nombreGrabacion" name="nombreGrabacion" /><br />
+            <label for="etiquetaGrabacion">Etiqueta de la grabación:</label>
+            <input id="etiquetaGrabacion" name="etiquetaGrabacion" /><br />
+            <button type="submit" id="guardarGrabacion">
+              Guardar grabación
+            </button>
+            <select name="seleccionarGrabacion" id="grabacionesSelect"></select>
+          </form>
+        </section>
       </section>
     </main>
 
-    <footer><p>team patata</p></footer>
+    <footer>
+      <p>team patata a.k.a. el Gonsa, el Oskitarweno, el Marzelo, y el Dabis</p>
+    </footer>
     <script src="js/main.js"></script>
   </body>
 </html>
