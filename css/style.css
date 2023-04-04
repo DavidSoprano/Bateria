@@ -5,12 +5,13 @@
 }
 
 header {
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 h1 {
   text-align: center;
-  font-size: small;
+  font-size: xx-large;
   color: white;
 }
 
@@ -20,11 +21,10 @@ form {
   right: 3%;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  /* width: 25vw;
-  height: 5vw; */
 }
 main {
   padding: 0 3rem;
+  margin-bottom: 0.5rem;
 }
 
 body {
@@ -65,23 +65,14 @@ input {
 /* Botones de arriba */
 .iconBtns {
   background-color: transparent;
-  padding: 3px;
-  border-radius: 25%;
 }
 
 .controls {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
-
-/* #recorder {
-  background-color: greenyellow;
-}
-
-#stop {
-  background-color: red;
-} */
 
 .durums {
   background-color: transparent;
@@ -199,7 +190,8 @@ input {
 
 footer p {
   text-align: center;
-  color: rgb(188, 188, 188);
+  font-size: large;
+  color: rgb(194, 206, 36);
 }
 
 /* Estilando acceso de teclas y rotándolas */
